@@ -1,0 +1,38 @@
+.nav-container {
+  width: 100%;
+  background-color: #081b21;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 60%;
+  margin: 0 auto;
+  min-height: 8vh;
+}
+
+.logo {
+  color: white;
+  font-size: 20px;
+}
+
+.logo span {
+  color: #b56844;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 30%;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+}
+
+.nav-links li {
+  list-style: none;
+}
