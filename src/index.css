@@ -10,3 +10,27 @@ body {
   font-family: "Poppins", sans-serif;
   background-color: #f0f0f0;
 }
+
+label {
+  font-size: 15px;
+}
+
+input {
+  height: 40px;
+}
+
+input,
+textarea {
+  margin-bottom: 20px;
+  border: 1px solid #b56844;
+  border-radius: 7px;
+  padding: 5px 10px;
+  font-size: 15px;
+  font-family: "Poppins", sans-serif;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border: 2px solid #b56844;
+}

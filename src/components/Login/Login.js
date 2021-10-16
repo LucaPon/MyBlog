@@ -1,4 +1,5 @@
 import React from "react";
+import Button from "../Button/Button";
 import "./Login.css";
 
 const Login = () => {
@@ -10,7 +11,7 @@ const Login = () => {
       <form onSubmit={handleSubmit()}>
         <label>Email:</label>
         <input type="text" required />
-        <button>Entra</button>
+        <Button text="Entra" />
       </form>
     </div>
   );

@@ -1,0 +1,10 @@
+.stats {
+  margin-bottom: 50px;
+}
+
+.stats-elements {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 10px;
+}
