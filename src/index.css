@@ -21,7 +21,6 @@ input {
 
 input,
 textarea {
-  margin-bottom: 20px;
   border: 1px solid #b56844;
   border-radius: 7px;
   padding: 5px 10px;
@@ -33,4 +32,8 @@ input:focus,
 textarea:focus {
   outline: none;
   border: 2px solid #b56844;
+}
+
+.invalid-input {
+  border: 2px solid red;
 }

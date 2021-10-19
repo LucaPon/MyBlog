@@ -1,7 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
+import { Link } from "react-router-dom";
 import "./Nav.css";
+import { useHistory } from "react-router-dom";
+import { UserContext } from "../../shared/UserContext";
 
 const Nav = () => {
+  const [loggedUser, setLoggedUser] = useContext(UserContext);
+
+  const handleLogout = (e) => {
+    setLoggedUser(null);
+  };
+
   return (
     <div className="nav-container">
       <nav>
@@ -10,17 +19,21 @@ const Nav = () => {
             My<span>BLOG</span>
           </h1>
         </div>
-        <ul className="nav-links">
-          <li>
-            <a href="#">Esplora</a>
-          </li>
-          <li>
-            <a href="#">Account</a>
-          </li>
-          <li>
-            <a href="#">Logout</a>
-          </li>
-        </ul>
+        {loggedUser && (
+          <ul className="nav-links">
+            <li>
+              <Link to="/">Esplora</Link>
+            </li>
+            <li>
+              <Link to="/account">{loggedUser.name}</Link>
+            </li>
+            <li>
+              <a onClick={handleLogout} href="#">
+                Logout
+              </a>
+            </li>
+          </ul>
+        )}
       </nav>
     </div>
   );

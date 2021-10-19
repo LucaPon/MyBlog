@@ -10,3 +10,13 @@ form {
   display: flex;
   flex-direction: column;
 }
+
+input {
+  margin-bottom: 15px;
+}
+
+.error-message {
+  color: red;
+  font-size: 15px;
+  margin-bottom: 15px;
+}
