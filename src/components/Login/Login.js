@@ -36,7 +36,6 @@ const Login = () => {
         <input
           className={`${error && "invalid-input"}`}
           type="text"
-          required
           onChange={(e) => setEmail(e.target.value)}
           value={email}
         />

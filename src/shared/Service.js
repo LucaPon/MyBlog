@@ -25,3 +25,19 @@ export const login = async (email) => {
     return response.json();
   });
 };
+
+export const createPost = async (post) => {
+  return fetch(BASE_URL + "/posts", {
+    method: "POST",
+    body: JSON.stringify(post),
+    headers: {
+      "Content-type": "application/json; charset=UTF-8",
+    },
+  }).then(function (response) {
+    if (!response.ok) {
+      throw Error("Unable to post data");
+    }
+
+    return response.json();
+  });
+};

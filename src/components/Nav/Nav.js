@@ -1,7 +1,6 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import "./Nav.css";
-import { useHistory } from "react-router-dom";
 import { UserContext } from "../../shared/UserContext";
 
 const Nav = () => {
