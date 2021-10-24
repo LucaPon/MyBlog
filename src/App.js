@@ -15,12 +15,14 @@ import { fetchData } from "./shared/Service";
 import { UserContext } from "./shared/UserContext";
 import Loading from "./components/Loading/Loading";
 import { BlogContext } from "./shared/BlogContext";
+import { RankingContext } from "./shared/RankingContext";
 
 function App() {
   const [loggedUser, setLoggedUser] = useState(null);
   const [users, setUsers] = useState(null);
   const [posts, setPosts] = useState(null);
   const [isPending, setIsPending] = useState(true);
+  const [rankingList, setRankingList] = useState(null);
 
   const loadData = () => {
     fetchData().then(([users, posts]) => {
@@ -47,34 +49,36 @@ function App() {
           {isPending && <Loading />}
 
           {!isPending && (
-            <BlogContext.Provider value={[users, posts]}>
-              <div className="content">
-                <Switch>
-                  <Route exact path="/login">
-                    {loggedUser ? <Redirect to="/" /> : <Login />}
-                  </Route>
-                  <Route exact path="/">
-                    {!loggedUser ? <Redirect to="/login" /> : <Posts />}
-                  </Route>
-                  <Route exact path="/account">
-                    {!loggedUser ? (
-                      <Redirect to="/login" />
-                    ) : (
-                      <div>
-                        <Stats />
-                        <Posts
-                          showAdd={true}
-                          filterUser={loggedUser.id}
-                          addPost={addPost}
-                        />
-                      </div>
-                    )}
-                  </Route>
-                </Switch>
+            <RankingContext.Provider value={[rankingList, setRankingList]}>
+              <BlogContext.Provider value={[users, posts]}>
+                <div className="content">
+                  <Switch>
+                    <Route exact path="/login">
+                      {loggedUser ? <Redirect to="/" /> : <Login />}
+                    </Route>
+                    <Route exact path="/">
+                      {!loggedUser ? <Redirect to="/login" /> : <Posts />}
+                    </Route>
+                    <Route exact path="/account">
+                      {!loggedUser ? (
+                        <Redirect to="/login" />
+                      ) : (
+                        <div>
+                          <Stats />
+                          <Posts
+                            showAdd={true}
+                            filterUser={loggedUser.id}
+                            addPost={addPost}
+                          />
+                        </div>
+                      )}
+                    </Route>
+                  </Switch>
 
-                <Ranking className="ranking" />
-              </div>
-            </BlogContext.Provider>
+                  <Ranking className="ranking" />
+                </div>
+              </BlogContext.Provider>
+            </RankingContext.Provider>
           )}
         </UserContext.Provider>
       </div>

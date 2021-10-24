@@ -1,8 +1,9 @@
 .row {
   height: 40px;
-  background-color: #449ab5;
+
+  background-color: var(--ranking-dark);
   border-radius: 4px;
-  color: white;
+  color: var(--text-white);
   font-size: 24px;
   display: grid;
   grid-template-columns: 1fr 2px 4fr 2px 1fr;
@@ -11,8 +12,20 @@
   margin-bottom: 5px;
 }
 
+.center {
+  font-size: 18px;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.row-first {
+  background-color: var(--ranking-light);
+}
+
 .separator {
-  background-color: white;
+  background-color: var(--text-white);
   height: 100%;
   width: 2px;
 }

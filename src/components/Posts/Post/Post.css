@@ -1,5 +1,5 @@
 .post {
-  background-color: white;
+  background-color: var(--post-bg);
   border-radius: 20px;
   padding: 30px;
   margin-bottom: 30px;
@@ -7,7 +7,7 @@
 }
 
 .post h3 {
-  color: #001220;
+  color: var(--text-dark);
   font-size: 30px;
   font-weight: bold;
   margin-bottom: 20px;
@@ -15,14 +15,14 @@
 }
 
 .text {
-  color: #68696a;
+  color: var(--text-grey);
   font-size: 16px;
   margin-bottom: 30px;
 }
 
 .author {
   text-align: end;
-  color: #68696a;
+  color: var(--text-grey);
   font-weight: bold;
   font-size: 13px;
 }

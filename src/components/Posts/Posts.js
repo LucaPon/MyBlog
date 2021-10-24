@@ -31,7 +31,7 @@ const Posts = ({ showAdd, filterUser, addPost }) => {
           <Button
             onClick={toggleAdd}
             text={addVisible ? "Cancel" : "Add New"}
-            color={addVisible ? "red" : "#b56844"}
+            color={addVisible ? "#0E566C" : "#DE7443"}
           />
         )}
       </div>

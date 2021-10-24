@@ -1,5 +1,19 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
 
+:root {
+  --orange: #de7443;
+  --nav-bg: #0e566c;
+  --main-bg: #f0f0f0;
+  --text-dark: #01345c;
+  --text-grey: #68696a;
+  --text-white: white;
+  --ranking-light: #038cb7;
+  --ranking-dark: #0e566c;
+  --error: red;
+  --post-bg: white;
+  --post-shadow: white;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -8,7 +22,7 @@
 
 body {
   font-family: "Poppins", sans-serif;
-  background-color: #f0f0f0;
+  background-color: var(--main-bg);
 }
 
 label {
@@ -21,7 +35,7 @@ input {
 
 input,
 textarea {
-  border: 1px solid #b56844;
+  border: 1px solid var(--orange);
   border-radius: 7px;
   padding: 5px 10px;
   font-size: 15px;
@@ -31,9 +45,9 @@ textarea {
 input:focus,
 textarea:focus {
   outline: none;
-  border: 2px solid #b56844;
+  border: 2px solid var(--orange);
 }
 
 .invalid-input {
-  border: 2px solid red;
+  border: 2px solid var(--error);
 }

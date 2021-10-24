@@ -7,7 +7,7 @@
 }
 
 h2 {
-  color: #18223c;
+  color: var(--text-dark);
   font-size: 35px;
   font-weight: bold;
 }

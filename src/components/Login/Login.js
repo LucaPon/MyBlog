@@ -32,7 +32,7 @@ const Login = () => {
     <div className="login">
       <h2>Login</h2>
       <form onSubmit={handleSubmit}>
-        <label>Email: (Sincere@april.biz)</label>
+        <label>Email:</label>
         <input
           className={`${error && "invalid-input"}`}
           type="text"

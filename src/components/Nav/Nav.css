@@ -1,6 +1,6 @@
 .nav-container {
   width: 100%;
-  background-color: #081b21;
+  background-color: var(--nav-bg);
 }
 
 nav {
@@ -13,12 +13,12 @@ nav {
 }
 
 .logo {
-  color: white;
+  color: var(--text-white);
   font-size: 20px;
 }
 
 .logo span {
-  color: #b56844;
+  color: var(--orange);
 }
 
 .nav-links {
@@ -29,10 +29,14 @@ nav {
 }
 
 .nav-links a {
-  color: white;
+  color: var(--text-white);
   text-decoration: none;
 }
 
 .nav-links li {
   list-style: none;
+}
+
+.active {
+  font-weight: bold;
 }

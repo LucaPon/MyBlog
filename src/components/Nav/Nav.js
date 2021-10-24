@@ -1,10 +1,13 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import "./Nav.css";
 import { UserContext } from "../../shared/UserContext";
+import { useLocation } from "react-router-dom";
 
 const Nav = () => {
   const [loggedUser, setLoggedUser] = useContext(UserContext);
+
+  const location = useLocation();
 
   const handleLogout = (e) => {
     setLoggedUser(null);
@@ -21,10 +24,20 @@ const Nav = () => {
         {loggedUser && (
           <ul className="nav-links">
             <li>
-              <Link to="/">Esplora</Link>
+              <Link
+                className={`${location.pathname === "/" && "active"}`}
+                to="/"
+              >
+                Esplora
+              </Link>
             </li>
             <li>
-              <Link to="/account">{loggedUser.name}</Link>
+              <Link
+                className={`${location.pathname === "/account" && "active"}`}
+                to="/account"
+              >
+                {loggedUser.name}
+              </Link>
             </li>
             <li>
               <a onClick={handleLogout} href="#">

@@ -1,7 +1,7 @@
 button {
   height: 40px;
-  color: white;
-  background-color: #b56844;
+  color: var(--text-white);
+  background-color: var(--orange);
   border-style: none;
   border-radius: 7px;
   cursor: pointer;
