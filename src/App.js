@@ -16,6 +16,7 @@ import { UserContext } from "./shared/UserContext";
 import Loading from "./components/Loading/Loading";
 import { BlogContext } from "./shared/BlogContext";
 import { RankingContext } from "./shared/RankingContext";
+import { useRef } from "react";
 
 function App() {
   const [loggedUser, setLoggedUser] = useState(null);
@@ -23,6 +24,10 @@ function App() {
   const [posts, setPosts] = useState(null);
   const [isPending, setIsPending] = useState(true);
   const [rankingList, setRankingList] = useState(null);
+
+  const [position, setPosition] = useState(-1);
+
+  const celebrationView = useRef();
 
   const loadData = () => {
     fetchData().then(([users, posts]) => {
@@ -40,17 +45,52 @@ function App() {
     loadData();
   }, []);
 
+  useEffect(() => {
+    setPosition(-1);
+  }, [loggedUser]);
+
+  const getRankingPosition = () => {
+    const rankingElement = rankingList.filter(
+      (element) => element.email === loggedUser.email
+    )[0];
+    var position = rankingList.indexOf(rankingElement) + 1;
+
+    return position;
+  };
+
+  const celebrationEnd = (e) => {
+    celebrationView.current.classList.remove("celebration-visible");
+  };
+
+  useEffect(() => {
+    if (rankingList !== null && loggedUser !== null) {
+      var newPosition = getRankingPosition();
+      setPosition(newPosition);
+      if (newPosition <= 3 && newPosition !== position) {
+        celebrationView.current.className = "celebration celebration-visible";
+      }
+    }
+  }, [rankingList]);
+
   return (
     <Router>
       <div className="App">
         <UserContext.Provider value={[loggedUser, setLoggedUser]}>
           <Nav />
-
           {isPending && <Loading />}
 
           {!isPending && (
             <RankingContext.Provider value={[rankingList, setRankingList]}>
               <BlogContext.Provider value={[users, posts]}>
+                <div
+                  ref={celebrationView}
+                  onAnimationEnd={celebrationEnd}
+                  className="celebration"
+                >
+                  <h1>{position === 1 ? "Complimenti!" : "Continua così!"}</h1>
+                  <h1>Hai raggiunto la {position}° posizione!</h1>
+                </div>
+
                 <div className="content">
                   <Switch>
                     <Route exact path="/login">
