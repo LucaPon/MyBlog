@@ -1,0 +1,29 @@
+.celebration {
+  background-color: var(--ranking-light);
+  text-align: center;
+  width: 100%;
+  color: var(--text-white);
+  font-size: 20px;
+  position: fixed;
+  z-index: 2;
+  top: 100%;
+  padding: 20px;
+}
+
+.celebration-visible {
+  animation: show-celebration 5s;
+}
+
+@keyframes show-celebration {
+  0% {
+    transform: translateY(0%);
+  }
+
+  50% {
+    transform: translateY(-100%);
+  }
+
+  100% {
+    transform: translateY(0%);
+  }
+}
