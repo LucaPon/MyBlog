@@ -1,6 +1,9 @@
 .nav-container {
   width: 100%;
   background-color: var(--nav-bg);
+  position: fixed;
+  top: 0;
+  z-index: 10;
 }
 
 nav {
@@ -37,6 +40,56 @@ nav {
   list-style: none;
 }
 
+.hamburger {
+  display: none;
+  width: 24px;
+  height: 24px;
+}
+
 .active {
   font-weight: bold;
+}
+
+@media only screen and (min-width: 1900px) {
+  nav {
+    width: 50%;
+  }
+}
+
+@media only screen and (max-width: 1400px) {
+  nav {
+    width: 90%;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .nav-links {
+    width: 60%;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .nav-links {
+    position: fixed;
+    right: 0px;
+    top: 8vh;
+    height: 93vh;
+    background-color: var(--nav-bg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 60%;
+    z-index: 10;
+    transform: translateX(100%);
+    transition: transform 0.5s ease-in;
+  }
+
+  .nav-active {
+    transform: translateX(0%);
+  }
+
+  .hamburger {
+    display: block;
+  }
 }

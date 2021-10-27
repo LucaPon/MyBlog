@@ -1,6 +1,6 @@
 import React, { useContext, useEffect } from "react";
 import RankingRow from "./RankingRow/RankingRow";
-import "./Ranking.css";
+
 import { BlogContext } from "../../shared/BlogContext";
 import { RankingContext } from "../../shared/RankingContext";
 
@@ -28,7 +28,7 @@ const Ranking = () => {
   }, [posts]);
 
   return (
-    <div>
+    <div className="ranking">
       <h2>Classifica</h2>
       {rankingList?.map((rankingElement, index) => (
         <RankingRow

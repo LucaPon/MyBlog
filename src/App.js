@@ -77,30 +77,32 @@ function App() {
                 <Celebration position={position} />
 
                 <div className="content">
-                  <Switch>
-                    <Route exact path="/login">
-                      {loggedUser ? <Redirect to="/" /> : <Login />}
-                    </Route>
-                    <Route exact path="/">
-                      {!loggedUser ? <Redirect to="/login" /> : <Posts />}
-                    </Route>
-                    <Route exact path="/account">
-                      {!loggedUser ? (
-                        <Redirect to="/login" />
-                      ) : (
-                        <div>
-                          <Stats />
-                          <Posts
-                            showAdd={true}
-                            filterUser={loggedUser.id}
-                            addPost={addPost}
-                          />
-                        </div>
-                      )}
-                    </Route>
-                  </Switch>
+                  <div className="left">
+                    <Switch>
+                      <Route exact path="/login">
+                        {loggedUser ? <Redirect to="/" /> : <Login />}
+                      </Route>
+                      <Route exact path="/">
+                        {!loggedUser ? <Redirect to="/login" /> : <Posts />}
+                      </Route>
+                      <Route exact path="/account">
+                        {!loggedUser ? (
+                          <Redirect to="/login" />
+                        ) : (
+                          <div>
+                            <Stats />
+                            <Posts
+                              showAdd={true}
+                              filterUser={loggedUser.id}
+                              addPost={addPost}
+                            />
+                          </div>
+                        )}
+                      </Route>
+                    </Switch>
+                  </div>
 
-                  <Ranking className="ranking" />
+                  <Ranking />
                 </div>
               </BlogContext.Provider>
             </RankingContext.Provider>

@@ -1,10 +1,10 @@
 .stats {
   margin-bottom: 50px;
+  width: 100%;
 }
 
 .stats-elements {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   gap: 10px;
 }
