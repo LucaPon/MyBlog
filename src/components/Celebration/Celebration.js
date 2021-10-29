@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import "./Celebration.css";
+import PropTypes from "prop-types";
 
 const Celebration = ({ position }) => {
   const celebrationView = useRef();
@@ -24,6 +25,10 @@ const Celebration = ({ position }) => {
       <h1>Hai raggiunto la {position}° posizione!</h1>
     </div>
   );
+};
+
+Celebration.propTypes = {
+  position: PropTypes.number,
 };
 
 export default Celebration;

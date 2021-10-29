@@ -49,9 +49,7 @@ const Nav = () => {
               </Link>
             </li>
             <li>
-              <a onClick={handleLogout} href="#">
-                Logout
-              </a>
+              <a onClick={handleLogout}>Logout</a>
             </li>
           </ul>
         )}

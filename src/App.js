@@ -16,7 +16,6 @@ import { UserContext } from "./shared/UserContext";
 import Loading from "./components/Loading/Loading";
 import { BlogContext } from "./shared/BlogContext";
 import { RankingContext } from "./shared/RankingContext";
-import { useRef } from "react";
 import Celebration from "./components/Celebration/Celebration";
 
 function App() {

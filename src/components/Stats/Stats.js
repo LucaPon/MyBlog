@@ -23,7 +23,7 @@ const Stats = () => {
       <h2>Stats</h2>
       <div className="stats-elements">
         <StatsElement name="Post" value={rankingElement.posts} />
-        <StatsElement name="Posizione" value={index + 1} />
+        <StatsElement name="Posizione" value={`${index + 1}`} />
         <StatsElement name="Precedente" value={`-${before}`} />
         <StatsElement name="Successivo" value={`+${after}`} />
       </div>

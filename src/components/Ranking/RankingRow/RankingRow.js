@@ -1,6 +1,8 @@
 import React, { useContext } from "react";
 import { UserContext } from "../../../shared/UserContext";
 import "./RankingRow.css";
+import PropTypes from "prop-types";
+
 const RankingRow = ({ index, element }) => {
   const [loggedUser, setLoggedUser] = useContext(UserContext);
 
@@ -19,6 +21,11 @@ const RankingRow = ({ index, element }) => {
       <div className="right">{element.posts}</div>
     </div>
   );
+};
+
+RankingRow.propTypes = {
+  index: PropTypes.number,
+  element: PropTypes.object,
 };
 
 export default RankingRow;

@@ -3,6 +3,7 @@ import { UserContext } from "../../../shared/UserContext";
 import Button from "../../Button/Button";
 import "./AddPost.css";
 import { createPost } from "../../../shared/Service";
+import PropTypes from "prop-types";
 
 const AddPost = ({ addPost, toggleAdd }) => {
   const [loggedUser, setLoggedUser] = useContext(UserContext);
@@ -82,6 +83,11 @@ const AddPost = ({ addPost, toggleAdd }) => {
       </form>
     </div>
   );
+};
+
+AddPost.propTypes = {
+  addPost: PropTypes.func,
+  toggleAdd: PropTypes.func,
 };
 
 export default AddPost;

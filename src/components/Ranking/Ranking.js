@@ -3,12 +3,13 @@ import RankingRow from "./RankingRow/RankingRow";
 
 import { BlogContext } from "../../shared/BlogContext";
 import { RankingContext } from "../../shared/RankingContext";
+import FlipMove from "react-flip-move";
 
 const Ranking = () => {
   const [rankingList, setRankingList] = useContext(RankingContext);
   const [users, posts] = useContext(BlogContext);
 
-  const computeRanking = () => {
+  const updateRanking = () => {
     var list = users.map((user) => {
       return {
         email: user.email,
@@ -18,25 +19,27 @@ const Ranking = () => {
 
     list.sort((a, b) => b.posts - a.posts);
 
-    return list;
+    setRankingList(list);
   };
 
   useEffect(() => {
-    var newRankingList = computeRanking();
-
-    setRankingList(newRankingList);
+    updateRanking();
   }, [posts]);
 
   return (
     <div className="ranking">
       <h2>Classifica</h2>
-      {rankingList?.map((rankingElement, index) => (
-        <RankingRow
-          key={rankingElement.email}
-          index={index}
-          element={rankingElement}
-        />
-      ))}
+      <FlipMove>
+        {rankingList?.map((rankingElement, index) => (
+          <div key={rankingElement.email}>
+            <RankingRow
+              key={rankingElement.email}
+              index={index}
+              element={rankingElement}
+            />
+          </div>
+        ))}
+      </FlipMove>
     </div>
   );
 };
