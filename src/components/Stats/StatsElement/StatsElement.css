@@ -1,0 +1,25 @@
+.stats-element {
+  background-color: var(--orange);
+  border-radius: 8px;
+  color: var(--text-white);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  aspect-ratio: 1;
+  max-height: 100px;
+}
+
+.stats-element:hover {
+  transform: translateY(-2px);
+}
+
+.stats-element p {
+  text-align: center;
+  font-size: 14px;
+  font-weight: normal;
+  margin-top: 10px;
+}
+
+.stats-element h3 {
+  text-align: center;
+  font-size: 45px;
+  font-weight: normal;
+}

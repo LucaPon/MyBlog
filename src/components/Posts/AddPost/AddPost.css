@@ -1,0 +1,8 @@
+.add-post {
+  margin-bottom: 30px;
+}
+
+.add-post textarea {
+  resize: vertical;
+  margin-bottom: 50px;
+}

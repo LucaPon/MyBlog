@@ -1,0 +1,7 @@
+.loading {
+  height: 92vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-dark);
+}

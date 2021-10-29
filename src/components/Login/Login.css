@@ -1,0 +1,22 @@
+.login {
+  max-width: 300px;
+}
+
+h2 {
+  margin-bottom: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  margin-bottom: 15px;
+}
+
+.error-message {
+  color: var(--error);
+  font-size: 15px;
+  margin-bottom: 15px;
+}
