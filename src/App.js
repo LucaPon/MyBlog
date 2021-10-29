@@ -10,7 +10,7 @@ import {
   Switch,
   Redirect,
 } from "react-router-dom";
-import { useState, useEffect } from "react/cjs/react.development";
+import { useState, useEffect } from "react";
 import { fetchData } from "./shared/Service";
 import { UserContext } from "./shared/UserContext";
 import Loading from "./components/Loading/Loading";
